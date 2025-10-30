@@ -16,7 +16,7 @@ COPY .env .
 COPY src src
 
 # 애플리케이션 빌드
-RUN gradle build --no-daemon
+RUN --mount=type=cache,target=/root/.gradle ./gradlew clean bootJar -x test --no-daemon
 
 # 두 번째 스테이지: 실행 스테이지
 FROM container-registry.oracle.com/graalvm/jdk:21
