@@ -32,6 +32,7 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     // 벨리데이션
