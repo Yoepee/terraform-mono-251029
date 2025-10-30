@@ -1,3 +1,6 @@
+server:
+  port: 8080
+  forward-headers-strategy: native
 spring:
   config:
     import: optional:file:.env[.properties]
@@ -5,7 +8,7 @@ spring:
     ansi:
       enabled: ALWAYS
   profiles:
-    active: dev
+    active: prod
     include: secret
   jpa:
     hibernate:

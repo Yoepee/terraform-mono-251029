@@ -38,6 +38,11 @@ dependencies {
     // s3
     implementation(platform("software.amazon.awssdk:bom:2.24.0"))
     implementation("software.amazon.awssdk:s3")
+
+    implementation("org.springframework.boot:spring-boot-starter-actuator") // 추가됨
+
+    implementation("org.springframework.boot:spring-boot-starter-data-redis") // 추가됨
+    implementation("org.springframework.session:spring-session-data-redis") // 추가됨
 }
 
 tasks.withType<Test> {
