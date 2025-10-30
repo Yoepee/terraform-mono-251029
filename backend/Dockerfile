@@ -13,14 +13,14 @@ COPY settings.gradle.kts .
 RUN chmod +x ./gradlew
 
 # 종속성 설치
-RUN ./gradle dependencies --no-daemon
+RUN gradle dependencies --no-daemon
 
 # 소스 코드 복사
 COPY .env .
 COPY src src
 
 # 애플리케이션 빌드
-RUN ./gradle build --no-daemon
+RUN gradle build --no-daemon
 
 # 두 번째 스테이지: 실행 스테이지
 FROM container-registry.oracle.com/graalvm/jdk:21
