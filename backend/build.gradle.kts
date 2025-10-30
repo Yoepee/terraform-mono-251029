@@ -25,22 +25,31 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    testImplementation("org.springframework.security:spring-security-test")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    // s3
-    implementation(platform("software.amazon.awssdk:bom:2.24.0"))
-    implementation("software.amazon.awssdk:s3")
+    // 벨리데이션
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    // DB 관련
+    runtimeOnly("com.h2database:h2")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    // spring doc
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
+    // jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
+    // oauth2
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 
+    runtimeOnly("com.mysql:mysql-connector-j") // 추가됨
     implementation("org.springframework.boot:spring-boot-starter-actuator") // 추가됨
-
     implementation("org.springframework.boot:spring-boot-starter-data-redis") // 추가됨
     implementation("org.springframework.session:spring-session-data-redis") // 추가됨
 }
